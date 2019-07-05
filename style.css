@@ -1,0 +1,197 @@
+/*
+Theme Name: Twenty Seventeen Child
+Author: Zhong
+Description: Child theme for Twenty Seventeen.
+Template:twentyseventeen
+Version: 0.1.0
+*/
+
+@import url("../twentyseventeen/style.css");
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 Normalize
+2.0 Accessibility
+3.0 Alignments
+4.0 Clearings
+5.0 Typography
+6.0 Forms
+7.0 Formatting
+8.0 Lists
+9.0 Tables
+10.0 Links
+11.0 Featured Image Hover
+12.0 Navigation
+13.0 Layout
+   13.1 Header
+   13.2 Front Page
+   13.3 Regular Content
+   13.4 Posts
+   13.5 Pages
+   13.6 Footer
+14.0 Comments
+15.0 Widgets
+16.0 Media
+   16.1 Galleries
+17.0 Customizer
+18.0 SVGs Fallbacks
+19.0 Media Queries
+20.0 Print
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+12.0 Navigation
+--------------------------------------------------------------*/
+/*20190701:在小尺寸页面不显示左菜单*/
+.navigation-left{
+    display:none;
+}
+/*--------------------------------------------------------------
+13.0 Layout
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+13.4 Posts
+--------------------------------------------------------------*/
+
+/**201907101:分类页文章标题和日期布局*/
+.title-date{
+    /*20190705:通过设置内填充（padding）的值来使文本看起来垂直居中，只需设置padding-top和padding-bottom的值相等*/
+    padding:0.5em;
+    border-bottom: dashed thin #d9d9d9;
+    min-height:3em;
+}
+.title-date .title,
+.title-date .date
+{
+    font-size:14px;
+    font-size:0.875rem; 
+} 
+.title-date .title a{
+    color:#62708a;
+}
+
+.title-date .date{
+    color:#666;
+}
+    /*-------------------------------------------------------------
+breadcrumbs
+--------------------------------------------------------------*/    
+    .breadcrumbs_nav {
+        border-bottom: solid 1px #ececec;
+        color:#62708a;
+    }
+    .breadcrumbs_nav .breadcrumbs_title{
+       display:none;
+    }
+    .article-content{
+        margin-top:1em;
+    }
+    
+/*--------------------------------------------------------------
+19.0 Media Queries
+--------------------------------------------------------------*/
+@media screen and (min-width: 48em) {
+  /*--------------------------------------------------------------
+   Layout
+--------------------------------------------------------------*/
+    /*20190701:在分类页增加左菜单*/
+    .navigation-left{
+        display:block;
+        float:left;
+        width:15%;
+        margin-top: 1em;
+        background: #f1ebea;
+    }
+    .site-article{
+        float:right;
+        width:80%;
+
+    }
+    
+/*-------------------------------------------------------------
+  Left navi menu
+--------------------------------------------------------------*/
+    /*20190701:设置左菜单title风格，height用于设置背景图片高度*/
+    
+    .left-navigation .left_menu_title{
+        color:#fffa9c;
+        background: url(assets/images/left_title_bg.jpg) round;
+        text-align: center;
+        font-size:16px;
+        font-size:1rem;
+        height:64px;
+        padding-top:0.5em;
+    }
+    
+    .left-navigation .left_menu_item{
+        margin-bottom:0.5em;
+    }
+    .left-navigation .left_menu_item li{
+        list-style:none;
+        font-size:14px;
+        font-size:0.875rem;
+        margin-top:1em;
+        /*20190701:调整icon与左侧边的距离.*/
+        padding-left: 1rem;
+    }
+    .left-navigation .left_menu_item li a{
+
+        background: url(assets/images/item_icon.jpg) no-repeat;
+        /*20190701:把背景图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域*/
+        background-size: contain;
+        /*20190701:调整文字与icon的距离*/
+        padding-left:1.5rem;
+    }
+    .left-navigation .left_current_item{
+        background:url(assets/images/current_item.svg) no-repeat;
+        background-size: 90%;
+        background-position: 0.5rem;
+        height:2rem;
+        line-height:2rem;/*20190701：line-height=heigh,可以使单行文字垂直居中*/
+    }
+    
+    .left-navigation .left_menu_item .left_current_item a{
+        background:none;
+        color:#fff;
+        
+    }
+    /*-------------------------------------------------------------
+  article list in category
+--------------------------------------------------------------*/
+    /**201907101:分类页文章标题和日期布局*/
+    .title-date{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        background: url(assets/images/post_item_icon.jpg) no-repeat left center;
+        padding-left: 1rem;
+    }
+    /*20190701:日期在行右侧，所以需要保证固定宽度避免在页面缩小时折行*/
+    .title-date .date{
+        width:100px;
+        margin-left:1em;
+
+    }
+    
+
+    /*-------------------------------------------------------------
+breadcrumbs
+--------------------------------------------------------------*/    
+    .breadcrumbs_nav {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-bottom: solid 1px #ececec;
+        color:#62708a;
+        height:3rem;
+    }
+  
+    .breadcrumbs_nav .breadcrumbs_path{
+        font-size:14px;
+        font-size:0.875rem;
+    }
+    .breadcrumbs_nav .breadcrumbs_title{
+       display:block;
+    }
+}
