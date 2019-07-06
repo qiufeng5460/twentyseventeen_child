@@ -47,6 +47,21 @@ Version: 0.1.0
 .navigation-left{
     display:none;
 }
+
+    /*-------------------------------------------------------------
+breadcrumbs
+--------------------------------------------------------------*/    
+    .breadcrumbs_nav {
+        border-bottom: solid 1px #ececec;
+        color:#62708a;
+    }
+    .breadcrumbs_nav .breadcrumbs_title{
+       display:none;
+    }
+    .article-content{
+        margin-top:1em;
+    }
+    
 /*--------------------------------------------------------------
 13.0 Layout
 --------------------------------------------------------------*/
@@ -74,20 +89,28 @@ Version: 0.1.0
 .title-date .date{
     color:#666;
 }
-    /*-------------------------------------------------------------
-breadcrumbs
---------------------------------------------------------------*/    
-    .breadcrumbs_nav {
-        border-bottom: solid 1px #ececec;
-        color:#62708a;
-    }
-    .breadcrumbs_nav .breadcrumbs_title{
-       display:none;
-    }
-    .article-content{
-        margin-top:1em;
-    }
     
+/*--------------------------------------------------------------
+   13.5 Pages
+--------------------------------------------------------------*/ 
+.page p{
+    font-size:14px;
+    font-size:0.875rem;
+}
+/*20190706:the leader message page*/
+.page .sub-title{
+    color:#ff6827;
+    text-align: center;
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+.page .leader-img img{
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+    /*考虑浏览器兼容性*/
+    -moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+    -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
+}
+
 /*--------------------------------------------------------------
 19.0 Media Queries
 --------------------------------------------------------------*/
@@ -167,9 +190,11 @@ breadcrumbs
         background: url(assets/images/post_item_icon.jpg) no-repeat left center;
         padding-left: 1rem;
     }
-    /*20190701:日期在行右侧，所以需要保证固定宽度避免在页面缩小时折行*/
+    /*20190701:日期在行右侧，所以需要保证固定宽度避免在页面缩小时折行
+    *20190706:将width改为max-width
+    */
     .title-date .date{
-        width:100px;
+        max-width:120px;
         margin-left:1em;
 
     }
@@ -193,5 +218,10 @@ breadcrumbs
     }
     .breadcrumbs_nav .breadcrumbs_title{
        display:block;
+       font-family: 宋体;
+       color:#62708a;
+       font-size:20px;
+       font-size: 1.25rem;
+       font-weight: bold; 
     }
 }
