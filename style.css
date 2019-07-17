@@ -182,7 +182,7 @@ breadcrumbs
     /*-------------------------------------------------------------
   article list in category
 --------------------------------------------------------------*/
-    /**201907101:分类页文章标题和日期布局*/
+    /**20190701:分类页文章标题和日期布局*/
     .title-date{
         display:flex;
         justify-content:space-between;
@@ -199,6 +199,35 @@ breadcrumbs
 
     }
     
+     /**20190714:faculty分类页image和abstract布局*/
+     .faculty{
+         display:inline;
+         float:left;
+         width:30%;
+         margin-top: 2em;
+         color:transparent;
+         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font-weight: 300;
+         -webkit-transition: all 0.5s ease;
+         -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+     }
+     
+    .faculty .faculty-image{
+        text-align: center;
+     }
+     
+     .faculty .faculty-abstract{
+        font-size: 14px;
+	font-size: 0.875rem;
+        padding-left: 10%;
+        padding-right:10%;
+
+     }
+    
+     .faculty:hover{
+        color:#575858;
+     }
 
     /*-------------------------------------------------------------
 breadcrumbs

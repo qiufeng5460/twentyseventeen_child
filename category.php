@@ -32,11 +32,24 @@ get_header(); ?>
     ?>
     <?php
 	/* Start the Loop */
-	while ( have_posts() ) :
+        //20190713:special display for faculty cat
+        //20190717：use is_category fuction
+        //$category=get_the_category();
+        //if($category[0]->category_nicename!='faculty')
+        if(is_category('faculty'))
+        {
+       	while ( have_posts() ) :
+	    the_post();
+            get_template_part( 'template-parts/post/content', 'faculty' );
+        endwhile;
+        }
+        else{
+        while ( have_posts() ) :
 	    the_post();
             get_template_part( 'template-parts/post/content', 'title' );
-        endwhile;
-
+        endwhile; 
+        }
+        
 	the_posts_pagination(
 	    array(
 	    'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',

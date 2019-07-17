@@ -9,7 +9,17 @@
  * @since 1.0
  */
 
+/*
+ * 20190717:modify the default post number(10) for faculty cat by pre_get_posts
+*/
+function twentyseventeen_child_posts_faculty($query){
 
+    if(is_category('faculty')){
+
+        $query->set('posts_per_page',9);
+    }
+}
+add_filter('pre_get_posts','twentyseventeen_child_posts_faculty');
 /*
  * 20190701:register left side menu. 
 */
