@@ -13,8 +13,8 @@
  * 20190717:modify the default post number(10) for faculty cat by pre_get_posts
 */
 function twentyseventeen_child_posts_faculty($query){
-
-    if(is_category('faculty')){
+    //20190717:加判断不在admin中
+    if(!is_admin()&&is_category('faculty')){
 
         $query->set('posts_per_page',9);
     }

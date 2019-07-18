@@ -89,7 +89,21 @@ breadcrumbs
 .title-date .date{
     color:#666;
 }
-    
+
+/**20190714:faculty分类页image和abstract布局*/
+.article-content .category-faculty{
+         margin-top:2em;
+}
+
+.faculty{
+        color:#575858;
+         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font-weight: 300;
+         text-align: center;
+        font-size: 13px;
+	font-size: 0.8125rem;
+     }
+
 /*--------------------------------------------------------------
    13.5 Pages
 --------------------------------------------------------------*/ 
@@ -200,14 +214,12 @@ breadcrumbs
     }
     
      /**20190714:faculty分类页image和abstract布局*/
+     
      .faculty{
          display:inline;
          float:left;
          width:30%;
-         margin-top: 2em;
          color:transparent;
-         font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-         font-weight: 300;
          -webkit-transition: all 0.5s ease;
          -moz-transition: all 0.5s ease;
          -o-transition: all 0.5s ease;
@@ -218,11 +230,11 @@ breadcrumbs
      }
      
      .faculty .faculty-abstract{
-        font-size: 14px;
-	font-size: 0.875rem;
         padding-left: 10%;
         padding-right:10%;
-
+        /*20190718:预留三行字体高度，避免窗体缩小时下一行元素受到影响*/
+        height:40px;
+        text-align: left;
      }
     
      .faculty:hover{
@@ -253,4 +265,13 @@ breadcrumbs
        font-size: 1.25rem;
        font-weight: bold; 
     }
+}
+
+@media screen and ( min-width: 67em ) {
+    /*20190718：因为faculty每个post都是浮动，
+    当窗口缩小时faculty fontsize需要同时缩小，否则abstract过高下一行的post会受到影响*/
+    .faculty .faculty-abstract{
+        font-size: 14px;
+	font-size: 0.875rem;
+     }
 }

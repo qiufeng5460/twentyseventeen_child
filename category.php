@@ -38,7 +38,7 @@ get_header(); ?>
         //if($category[0]->category_nicename!='faculty')
         if(is_category('faculty'))
         {
-       	while ( have_posts() ) :
+        while ( have_posts() ) :
 	    the_post();
             get_template_part( 'template-parts/post/content', 'faculty' );
         endwhile;
