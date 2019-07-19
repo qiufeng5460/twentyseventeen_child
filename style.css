@@ -103,6 +103,23 @@ breadcrumbs
         font-size: 13px;
 	font-size: 0.8125rem;
      }
+     
+/**20190719:single 布局*/   
+.single-title{
+    text-align: center;
+}
+.single-date{
+    text-align: right;
+    color:#666666;
+    font-size:14px;
+    font-size:0.875rem;
+}
+.post .sub-title{
+    color:#ff6827;
+    text-align: center;
+    font-size: 18px;
+    font-size: 1.125rem;
+}
 
 /*--------------------------------------------------------------
    13.5 Pages
