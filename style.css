@@ -230,6 +230,9 @@ breadcrumbs
 
     }
     
+    .title-date .title .sticky-title{
+        color:red;
+    }
      /**20190714:faculty分类页image和abstract布局*/
      
      .faculty{
