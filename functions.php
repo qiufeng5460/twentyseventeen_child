@@ -9,6 +9,25 @@
  * @since 1.0
  */
 
+/**
+ * 20190316:Enqueue scripts.
+ */
+function twentyseventeen_child_scripts() {
+
+    //首页幻灯片
+    wp_enqueue_script( 'plugslides', get_theme_file_uri( '/assets/js/plug.slides2.2.js' ), array( 'jquery' ), '2.1.2', true );
+   
+}
+add_action( 'wp_enqueue_scripts', 'twentyseventeen_child_scripts' );
+
+/*
+ * 20190305:adds support for excerpts in pages
+*/
+function twentyseventeen_child_init() {
+     add_post_type_support('page', 'excerpt');
+}
+add_action('init', 'twentyseventeen_child_init');
+
 /*
  * 20190717:modify the default post number(10) for faculty cat by pre_get_posts
 */
@@ -279,3 +298,33 @@ function putStickyOnTop($posts) {
   return $posts;
 }
 add_filter('the_posts',  'putStickyOnTop' );
+
+/**
+ * 20190417：将附件（image）关联到一个页面，然后循环获取该页面的附件用以显示，比如在首页实现幻灯片等
+ * 将附件分类后没有办法从分类直接获取附件？
+ * 因为在plug.slides2.2.js中使用了slides的li，所以在function中固定li的class为sildes
+ */
+ 
+function twentyseventeen_child_get_attachment_in_post($post_slug=''){
+     
+    $image_slides='';
+    //20190417:根据slug获取指定post的所有image附件
+    if($post_slug){
+       $media = get_attached_media( 'image', get_page_by_path($post_slug) );
+       if(!$media)
+       {echo "this is wrong post slug"; }
+    }
+    else{
+        return;
+    }
+    
+    foreach($media as $v){
+       //20190417:根据attachment_id获取附件地址       
+       $image_attributes = wp_get_attachment_image_src( $v->ID,'full' ); // 返回一个数组
+       if( $image_attributes ) {
+
+          $image_slides.='<li class="slides"><img src="'.$image_attributes[0].'"/></li>';
+        } 
+    }
+    echo $image_slides;
+}

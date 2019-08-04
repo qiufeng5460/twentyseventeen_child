@@ -65,6 +65,14 @@ breadcrumbs
 /*--------------------------------------------------------------
 13.0 Layout
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+13.2 Front Page
+--------------------------------------------------------------*/
+.twentyseventeen-front-page p{
+    font-size:16px;
+    font-size:1rem;
+}
 /*--------------------------------------------------------------
 13.4 Posts
 --------------------------------------------------------------*/
@@ -124,7 +132,7 @@ breadcrumbs
 /*--------------------------------------------------------------
    13.5 Pages
 --------------------------------------------------------------*/ 
-.page p{
+.page:not(.twentyseventeen-front-page) p{
     font-size:14px;
     font-size:0.875rem;
 }
@@ -284,6 +292,50 @@ breadcrumbs
        font-size:20px;
        font-size: 1.25rem;
        font-weight: bold; 
+    }
+        /*-------------------------------------------------------------
+20190724:front-page
+--------------------------------------------------------------*/ 
+    .the1row{
+       margin-top: 3em;    
+    }
+    
+    .the1row .leader_message_frontpage{
+        width:38%;
+
+        float:left;
+        height:300px;
+        position:relative;
+
+    }
+    .the1row .leader_message_frontpage .leader_message_thumbnail_frontpage{
+        box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+    /*考虑浏览器兼容性*/
+        -moz-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+        -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+        border-radius: 10px;
+    }
+    .the1row .leader_message_excerpt{
+        height:260px;
+        color:#4799b7;
+        overflow: hidden;
+    }
+    .the1row .leader_message_frontpage .leader_message_more{
+       right:10px;
+        bottom:0;
+        position:absolute;
+    }
+    .the1row .slides_frontpage{
+        width:60%;
+
+        float:right;
+        height:300px;
+        overflow: hidden;
+    }
+    .the1row .slides_frontpage img{
+
+        height:100%;
+        width:auto;
     }
 }
 
