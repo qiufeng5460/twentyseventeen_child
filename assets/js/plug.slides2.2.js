@@ -45,8 +45,7 @@
 				*/
 				var liWidth=parseInt(settings.width);
 				var liHight=parseInt(settings.height);
-                               console.log(settings);
-                                
+                                                               
 				var bodyW=parseInt(document.body.clientWidth);
 				if(liWidth>bodyW){
 					//liHight=liHight*bodyW/liWidth;
@@ -233,4 +232,16 @@
         var slides_nav_a_cur=$("#slides_nav_a_cur")[0].src;
 
         $("#advertisement").slides({"height":divh,"width":divw,"pre_next":slides_pre_next,"nav_a":slides_nav_a,"nav_a_cur":slides_nav_a_cur});
+        //20190805:根据slide宽度调整next icon位置
+        $(window).resize(function(){
+            var divw=$(".slides_frontpage").width();
+            //console.log(divw);
+             if(divw>540){
+                 $("#advertisement .next").css("right","15px");
+             }
+             else{
+                 $("#advertisement .next").css("right",540-divw+15+"px");
+             }
+
+        });
 })(jQuery);
