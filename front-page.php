@@ -15,7 +15,7 @@
 get_header(); ?>
 
 <div class="wrap">
-<div class="the1row">
+<section class="the1row">
 <div class="the1col_the1row leader_message_frontpage">
     <?php 
     $args=array(
@@ -57,7 +57,34 @@ get_header(); ?>
         </ul>   
     </div>
 </div>    
+</section>
+    <section class="the2row">
+        <div class="the1col_the2row childhood_frontpage">
+        <?php  twentyseventeen_child_postlist_frontpage('childhood'); ?>   
+        </div>
+        <div class="the2col_the2row education_frontpage">
+        <?php  twentyseventeen_child_postlist_frontpage('education'); ?>    `
+        </div>
+    </section>
+    
+    
 </div>
+
+<section class="the3row">
+    <div class="fixed_picture">
+        
+    </div>
+</section>
+
+<div class="wrap">
+<section class="the4row">
+        <div class="the1col_the4row exchange_frontpage">
+        <?php  twentyseventeen_child_postlist_frontpage('exchange'); ?>   
+        </div>
+        <div class="the2col_the4row media_frontpage">
+        <?php  twentyseventeen_child_postlist_frontpage('media'); ?>    `
+        </div>
+</section>
 </div>
 
 <?php

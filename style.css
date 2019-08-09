@@ -39,6 +39,9 @@ Version: 0.1.0
 19.0 Media Queries
 20.0 Print
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+4.0 Clearings
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 12.0 Navigation
@@ -65,12 +68,16 @@ breadcrumbs
 /*--------------------------------------------------------------
 13.0 Layout
 --------------------------------------------------------------*/
-
+.the1row:after {
+	clear: both;
+	content: "";
+	display: block;
+}
 /*--------------------------------------------------------------
 13.2 Front Page
 --------------------------------------------------------------*/
-.the1row{
-    margin-top: 3em;    
+.twentyseventeen-front-page section{
+    margin-top: 3em;  
 }
     
 .the1row .leader_message_frontpage{
@@ -103,6 +110,33 @@ breadcrumbs
 
 .the1row .slides_frontpage{
     display:none;
+}
+
+
+.the2row .title-date{
+    min-height:2em;
+    border-bottom: dashed thin #d9d9d9;
+}
+
+/*20190412:首页post分类名*/
+.cat_name_frontpage{
+display:flex;
+justify-content:space-between;
+border-bottom: solid 1px #ececec;
+line-height: 50px;
+}
+.cat_name_frontpage p{
+       
+       font-family:"Microsoft YaHei","Times New Roman",Georgia,Serif;
+       color:#62708a;
+	font-size: 20px;
+	font-size: 1.25rem;
+       margin-bottom: 0;
+}
+.cat_name_frontpage a{
+        padding-right: 1em;
+    	font-size: 14px;
+	font-size: 0.875rem;
 }
 /*--------------------------------------------------------------
 13.4 Posts
@@ -348,6 +382,35 @@ breadcrumbs
     .the1row .slides_frontpage img{
         height:100%;
         width:auto;
+    }
+    .the2row .childhood_frontpage{
+        float:left;
+        width:50%;
+        padding-right:20px;
+    }
+    .the2row .education_frontpage{
+        float:right;
+        width:50%;
+        padding-left:20px;
+    }
+    .fixed_picture{
+        height:600px;
+        width:100%;
+        box-shadow: inset 0 0 8px rgba(0, 0, 0,.4);
+        background: url(assets/images/graduation.jpg) top no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    .the4row .exchange_frontpage{
+        float:left;
+        width:50%;
+        padding-right:20px;
+    }
+    .the4row .media_frontpage{
+        float:right;
+        width:50%;
+        padding-left:20px;
     }
 }
 

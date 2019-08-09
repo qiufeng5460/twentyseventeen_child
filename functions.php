@@ -34,7 +34,6 @@ add_action('init', 'twentyseventeen_child_init');
 function twentyseventeen_child_posts_faculty($query){
     //20190717:加判断不在admin中
     if(!is_admin()&&is_category('faculty')){
-
         $query->set('posts_per_page',9);
     }
 }
@@ -327,4 +326,41 @@ function twentyseventeen_child_get_attachment_in_post($post_slug=''){
         } 
     }
     echo $image_slides;
+}
+
+/**
+ * 20190413：在frontpage添加分类列表
+ */
+ 
+function twentyseventeen_child_postlist_frontpage($cat_slug=''){
+        $cat_frontpage='';
+        if($cat_slug){
+        $cat=get_category_by_slug($cat_slug);
+        if(!$cat){
+            echo "It is wrong for category slug!";
+        }
+        else{
+        //20190413:display cat name for post list in frontpage 
+        $cat_frontpage = '<div class="cat_name_frontpage">';
+        $cat_frontpage.= '<p>'.get_cat_name($cat->term_id).'</p>';
+        $cat_frontpage.= '<a href="'.get_category_link($cat->term_id).'">>>></a>';
+        $cat_frontpage.= '</div>'; 
+        echo $cat_frontpage;
+        
+        //20190806:get post list in frontpage
+        $args=array(
+            'category_name'=>$cat_slug,
+             'posts_per_page'=>'5'
+         );
+        $query=new WP_Query($args);
+        if($query->have_posts()){
+        while($query->have_posts()){
+            $query->the_post();
+            get_template_part( 'template-parts/frontpage/content', 'title' );
+           }
+        }
+        wp_reset_postdata();
+        
+        }
+        }
 }
