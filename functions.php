@@ -16,7 +16,8 @@ function twentyseventeen_child_scripts() {
 
     //首页幻灯片
     wp_enqueue_script( 'plugslides', get_theme_file_uri( '/assets/js/plug.slides2.2.js' ), array( 'jquery' ), '2.1.2', true );
-   
+       //首页老师照片播放
+    wp_enqueue_script( 'jzoro', get_theme_file_uri( '/assets/js/jzoro2.js' ), array( 'jquery' ), '2.1.2', true );
 }
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_child_scripts' );
 

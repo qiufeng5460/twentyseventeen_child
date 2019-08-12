@@ -68,11 +68,8 @@ breadcrumbs
 /*--------------------------------------------------------------
 13.0 Layout
 --------------------------------------------------------------*/
-.the1row:after {
-	clear: both;
-	content: "";
-	display: block;
-}
+
+
 /*--------------------------------------------------------------
 13.2 Front Page
 --------------------------------------------------------------*/
@@ -111,7 +108,11 @@ breadcrumbs
 .the1row .slides_frontpage{
     display:none;
 }
-
+.the1row:after {
+	clear: both;
+	content: "";
+	display: block;
+}
 
 .the2row .title-date{
     min-height:2em;
@@ -138,6 +139,56 @@ line-height: 50px;
     	font-size: 14px;
 	font-size: 0.875rem;
 }
+
+.the4row:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+        /*20190423：给第三行添加title和绿色边框*/
+.teachers{
+    border:1px solid #28ae65;
+    border-radius:10px;
+    -webkit-box-flex:1;
+    position:relative;
+    height:180px;
+}
+.teachers .title{
+    text-align:center;
+    color:#28ae65;
+    font-size:20px;
+    width:140px;
+    height:30px;
+    position:absolute;
+    left:50%;
+    margin-left: -70px;
+    top:-15px;
+    background-color: #fff;
+}
+
+.teachers .pic_box li{
+    list-style-type:none;
+}
+.teachers .slides {
+    float:left;
+}
+        /*20190406:师资照片轮播*/
+.teachers .show_box {
+      margin: auto;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+
+    }
+
+.teachers .pic_box {
+      position: absolute;
+      padding-left:0;
+      top:50px;
+    }
+	
+
 /*--------------------------------------------------------------
 13.4 Posts
 --------------------------------------------------------------*/
@@ -412,6 +463,43 @@ breadcrumbs
         width:50%;
         padding-left:20px;
     }
+
+.teachers .pic_box li{
+        margin-right:25px;
+    }  
+    
+.teachers #arr span{
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 5px;
+            top:50%;
+            margin-top: -20px;
+            background: #fff;
+            cursor: pointer;
+            line-height: 25px;
+            text-align: center;
+			
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 20px;
+            color: #000;
+            opacity: 0.5;
+            border: 1px solid #fff;
+
+        }
+.teachers #arr #right {
+            right: 40px;
+            left: auto;
+        }
+        
+
+}
+
+@media screen and ( min-width: 60em ){
+    .teachers .pic_box li{
+        margin-right:50px;
+    }
 }
 
 @media screen and ( min-width: 67em ) {
@@ -420,5 +508,5 @@ breadcrumbs
     .faculty .faculty-abstract{
         font-size: 14px;
 	font-size: 0.875rem;
-     }
+     }     
 }

@@ -85,6 +85,39 @@ get_header(); ?>
         <?php  twentyseventeen_child_postlist_frontpage('media'); ?>    `
         </div>
 </section>
+<section class="the5row">
+    <div class="teachers">
+        <div class="title">幼师风采</div>
+        <a href="<?php echo get_category_link(get_category_by_slug('faculty')->term_id); ?>">
+            <div class="show_box">
+                <ul class="pic_box" id="pic_box">
+                    <?php
+                    $args=array(
+                       'category_name'=>'faculty',
+                       'posts_per_page'=>'10',
+                       'orderby'=>'rand'
+                    );
+                    $query=new WP_Query($args);
+                    if($query->have_posts()){
+                        while($query->have_posts()){
+                           $query->the_post();
+                           $postid=get_the_ID();
+                    ?>       
+                           <li class="slides"><?php the_post_thumbnail(array(100,100));?></li><!-- #post-<?php the_ID(); ?> -->
+                    <?php
+                       }
+                    }
+                    wp_reset_postdata();
+                    ?>
+                </ul>
+                <div id="arr">
+                    <span id="left"> <</span>
+                    <span id="right">></span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
 </div>
 
 <?php
