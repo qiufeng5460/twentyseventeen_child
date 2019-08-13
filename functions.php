@@ -365,3 +365,32 @@ function twentyseventeen_child_postlist_frontpage($cat_slug=''){
         }
         }
 }
+
+/**
+ * 20190417：在首页以polaroid效果显示社团分类链接
+ */
+function twentyseventeen_child_cat_in_polaroid($cat_slug='',$post_slug=''){
+        $cat_polaroid='';               
+        if($cat_slug===''||$post_slug===''){
+            return;
+        }
+        $cat=get_category_by_slug($cat_slug);
+        $args=array(
+           'name'=>$post_slug
+        );
+   
+        $query=new WP_Query($args);
+        if($query->have_posts()){
+            while($query->have_posts()){
+            $query->the_post();
+
+            $cat_polaroid='<div class="polaroid">';
+            $cat_polaroid.='<a href="'.get_category_link($cat->term_id).'">';
+            $cat_polaroid.=get_the_post_thumbnail();         
+            $cat_polaroid.='<p class="caption">'.get_the_title().'</p>';
+            $cat_polaroid.='</a></div>';
+            }
+        }
+        wp_reset_postdata();
+        echo $cat_polaroid;
+}

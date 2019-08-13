@@ -187,7 +187,42 @@ line-height: 50px;
       padding-left:0;
       top:50px;
     }
-	
+
+/*20190410:add css for clue*/
+.clue_frontpage{
+      margin: auto;
+     display:flex;
+     flex-direction: column;
+     align-items:center;
+}
+		
+.clue_frontpage .polaroid{
+
+		max-width:50%;
+		padding:10px 10px 0px 10px;
+		border:1px solid #f2f2f0;
+		background-color:white;
+		box-shadow:5px 5px 6px #aaaaaa;
+		margin: 10px 10px;
+                text-align: center;
+                height:220px;
+
+
+	}
+         
+        .clue_frontpage .polaroid img{
+            height:70%;
+        }
+.clue_frontpage .polaroid p{
+       margin-top:15px;
+       font-family:STHupo,LiSu,"Microsoft YaHei","Times New Roman",Georgia,Serif;
+       color:#4799b7;
+       font-size:1.2em;
+	}
+.clue_frontpage .polaroid:hover{
+	transform:translate(5px,5px);
+        box-shadow:none;
+	}    
 
 /*--------------------------------------------------------------
 13.4 Posts
@@ -492,7 +527,13 @@ breadcrumbs
             right: 40px;
             left: auto;
         }
-        
+        .clue_frontpage{
+            flex-direction: row;
+            justify-content: space-between;
+        }       
+        .clue_frontpage .polaroid{
+            width:30%;
+        }
 
 }
 

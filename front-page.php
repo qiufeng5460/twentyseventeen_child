@@ -18,13 +18,13 @@ get_header(); ?>
 <section class="the1row">
 <div class="the1col_the1row leader_message_frontpage">
     <?php 
-    $args=array(
+    $args_leader=array(
         'pagename'=>'leader_message'
     );
-    $query=new WP_Query($args);
-    if($query->have_posts()){
-        while($query->have_posts()){
-            $query->the_post();
+    $query_leader=new WP_Query($args_leader);
+    if($query_leader->have_posts()){
+        while($query_leader->have_posts()){
+            $query_leader->the_post();
     ?>
     <article id="post-<?php the_ID();?>">
         <div class="leader_message_excerpt">
@@ -118,6 +118,14 @@ get_header(); ?>
         </a>
     </div>
 </section>
+    <section class="the6row clue_frontpage">
+
+            <?php 
+            twentyseventeen_child_cat_in_polaroid('dream','7dream');
+            twentyseventeen_child_cat_in_polaroid('parent_asistant','mama_story');
+            twentyseventeen_child_cat_in_polaroid('parent_asistant','baba_teacher');
+            ?>
+    </section>
 </div>
 
 <?php
