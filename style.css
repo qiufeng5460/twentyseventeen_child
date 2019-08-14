@@ -300,7 +300,23 @@ line-height: 50px;
     -moz-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
     -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 }
+/*--------------------------------------------------------------
+13.6 Footer
+--------------------------------------------------------------*/
 
+	.site-footer {
+
+		line-height: 2;
+		margin-top: 3em;
+                text-align: center;
+                background-color: #dedede;
+	}
+        .site-footer p{
+            font-size: 14px;
+	    font-size: 0.875rem;
+            margin-bottom: 0;
+        }
+        
 /*--------------------------------------------------------------
 19.0 Media Queries
 --------------------------------------------------------------*/
@@ -534,6 +550,32 @@ breadcrumbs
         .clue_frontpage .polaroid{
             width:30%;
         }
+	/* Footer */
+	.site-footer {
+            text-align: left;
+
+	}
+        
+        .site-info {
+	margin-bottom:0;
+        float:left;
+        width:60%;
+        padding-left:50px;
+      }
+      .wechat_offcial_account{
+          float:right;
+          padding-right:20px;
+      }
+      .wechat_offcial_account img{
+          height: 80px;
+          width:80px;
+      }
+      
+      .site-footer .wrap {
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
 
 }
 
