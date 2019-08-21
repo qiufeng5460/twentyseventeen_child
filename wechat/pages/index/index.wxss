@@ -1,0 +1,65 @@
+/**index.wxss**/
+
+.index-header{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 70'%3E%3Cpath d='M0 0v50c24.169 21.022 100 20 100 20s76.452-.03 100-20V0z' fill='%230f5ba1' stroke='%230f5ba1' stroke-width='.265'/%3E%3C/svg%3E");
+background-size:contain;
+height:400rpx;
+background-repeat: no-repeat;
+display:flex;
+flex-direction: column;
+align-items: center;
+}
+
+.index-header .index-header-title{
+  color:white;
+  margin-top:50rpx;
+  font-size:50rpx;
+  font-family: "黑体";
+  font-weight: 700;
+  height:100rpx;
+  letter-spacing: 0.25em;
+}
+
+.index-header image{
+  width:50%;
+  margin-top:50rpx;
+  border-radius: 30rpx;
+}
+
+.leader-message{
+  display:flex;
+  margin-top:100rpx;
+  margin-left:50rpx;
+  margin-right:50rpx;
+  background:linear-gradient(white,#edf1f4);
+  box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+  justify-content: space-around;
+  padding-top:50rpx;
+  padding-bottom:50rpx;
+  border-radius: 30rpx;
+  height:200rpx;
+  align-items: center;
+}
+
+
+.leader-message image{
+    width:50%;
+    height:100%;
+}
+.leader-message .shape{
+  
+  background:linear-gradient(to right,#cd5061,#d99eab);
+  margin-right:50rpx;
+  height:80rpx;
+  padding-top:20rpx;
+  padding-left:30rpx;
+  padding-right:20rpx;
+  letter-spacing: 0.25em;
+  border-top-left-radius: 50rpx;
+  border-bottom-right-radius: 50rpx;
+}
+
+.leader-message .shape text{
+  color:white;
+  font-weight: 700;
+}

@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+<view class="index-header">
+    <text class="index-header-title">北京市示范幼儿园</text>
+    <image class="index-header-img" src="../../images/777.jpg"></image>
+</view>
+<view class="leader-message">
+  <image src="../../images/lady.svg"></image>
+  <view class="shape">
+    <text>园长寄语</text>
+  </view>
+</view>
+</view>
