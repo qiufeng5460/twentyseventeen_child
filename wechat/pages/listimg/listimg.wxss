@@ -1,0 +1,31 @@
+/* pages/listimg/listimg.wxss */
+
+.post-list{
+  margin:50rpx 20rpx;
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post-list .img-excerpt{
+  width:45%;
+  margin-top:50rpx;
+  margin-bottom:50rpx;
+}
+.post-list .img-excerpt image{
+  width:100%;
+
+}
+
+.post-list .img-excerpt .excerpt{
+  font-size:0.8rem;
+}
+
+.more{
+  background-color: white;
+  margin:50rpx 20rpx;
+  border-radius: 20rpx;
+  padding:30rpx;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+/* pages/list/list.wxss */
+.post-list{
+  background-color: white;
+  margin:50rpx 20rpx;
+  border-radius: 20rpx;
+  padding:30rpx 40rpx;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.post-list .title-date{
+    border-bottom: 1px solid #eee;
+    min-height:150rpx;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-list .title-date .date text{
+   color:#7b7c7c;
+}
+
+.more{
+  background-color: white;
+  margin:50rpx 20rpx;
+  border-radius: 20rpx;
+  padding:30rpx;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+/* pages/detail/detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+.article-page .title{
+  text-align: center;
+  font-size:1.5rem;
+  font-weight: 700;
+  margin-top:50rpx;
+  color:#ff6827;
+  text-shadow: 5rpx 5rpx 5rpx rgba(0,0,0,.5);
+}
+
+.article-page .content{
+  padding-left:20rpx;
+  padding-right:20rpx;
+  margin-bottom:100rpx;
+}
+
+.article-page .content .sub-title{
+  color:#ff6827;
+  text-align: center;
+  font-size:1rem;
+}
+
+.article-page .content .wxParse-p:not(.sub-title){
+  font-size:0.8rem;
+  line-height:1.2rem;
+}
+
+.article-page .content >.wxParse-p{
+  margin-top:15rpx;
+  margin-bottom:15rpx;
+}
+
+.article-page .content image{
+  height:360rpx;
+  width:100%;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+}

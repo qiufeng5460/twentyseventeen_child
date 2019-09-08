@@ -1,0 +1,2 @@
+<!--pages/wxlink/wxlink.wxml-->
+<web-view src="{{wxlink}}" binderror="loadError" bindload="loadOK"></web-view>

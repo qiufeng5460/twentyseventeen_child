@@ -1,0 +1,17 @@
+<!--pages/list/list.wxml-->
+<view class="post-list">
+  <block wx:key="id" wx:for="{{post_list}}">
+    <view class="title-date" id="{{item.id}}" bindtap="toDetail" data-wxlink="{{item.wxlink}}">
+      <view class="title">
+        <text>{{item.title.rendered}}</text>
+      </view>
+      <view class="date">
+        <text>{{item.date}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="more" bindtap="getMore" style="display:{{more}}">
+  <text>加载更多</text>
+</view>

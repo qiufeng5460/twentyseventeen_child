@@ -394,3 +394,24 @@ function twentyseventeen_child_cat_in_polaroid($cat_slug='',$post_slug=''){
         wp_reset_postdata();
         echo $cat_polaroid;
 }
+
+/*
+ * 20190602:修改rest post response
+ * 20190615:添加微信链接返回
+*/
+function twentyseventeen_child_rest_prepare_post($data,$post,$request){
+    $_data=$data->data;
+    $_data['wxlink']='';
+    $_data['thumbnailurl']='';
+
+    if(get_post_meta($post->ID,'wx_link',true)){
+       $_data['wxlink']= get_post_meta($post->ID,'wx_link',true);
+    }
+    if(has_post_thumbnail()){
+       $_data['thumbnailurl']=get_the_post_thumbnail_url($post,'post-thumbnail');
+    }
+    $data->data=$_data;
+    return $data;	
+}
+add_filter( 'rest_prepare_post', 'twentyseventeen_child_rest_prepare_post',10,3);
+

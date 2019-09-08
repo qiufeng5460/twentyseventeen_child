@@ -1,0 +1,16 @@
+<!--pages/listimg/listimg.wxml-->
+<view class="post-list">
+  <block wx:key="id" wx:for="{{post_list}}">
+    <view class="img-excerpt" id="{{item.id}}" bindtap="toDetail" data-wxlink="{{item.wxlink}}">
+      <view class="img">        
+        <image src="{{item.thumbnailurl}}" mode="widthFix" ></image>
+      </view>
+      <view class="excerpt">
+        <text>{{item.excerpt.rendered}}</text>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="more" bindtap="getMore" style="display:{{more}}">
+  <text>加载更多</text>
+</view>

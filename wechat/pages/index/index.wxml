@@ -4,10 +4,65 @@
     <text class="index-header-title">北京市示范幼儿园</text>
     <image class="index-header-img" src="../../images/777.jpg"></image>
 </view>
-<view class="leader-message">
+<view class="main-menu leader-message" bindtap="toDetail" id="{{leader_message_id}}">
   <image src="../../images/lady.svg"></image>
   <view class="shape">
     <text>园长寄语</text>
   </view>
+</view>
+<view class="main-menu about" bindtap="toDetail" id="{{about_id}}">
+  <image src="../../images/about.svg"></image>
+  <view class="shape">
+    <text>关于七幼</text>
+  </view>
+</view>
+<view class="cat-menu">
+  <view class="main-menu 2nd-menu child" bindtap="toList" id="{{child_id}}">
+    <image src="../../images/child.svg"></image>
+    <view class="shape">
+      <text>幸福童年</text>
+    </view>
+  </view>
+  <view class="main-menu 2nd-menu education" bindtap="toList" id="{{education_id}}">
+    <image src="../../images/education.svg"></image>
+    <view class="shape">
+      <text>专业教育</text>
+    </view>
+  </view>
+</view>
+<view class="cat-menu">
+  <view class="main-menu 2nd-menu exchange" bindtap="toList" id="{{exchange_id}}">
+    <image src="../../images/exchange.svg"></image>
+    <view class="shape">
+      <text>对外交流</text>
+    </view>
+  </view>
+  <view class="main-menu 2nd-menu media" bindtap="toList" id="{{media_id}}">
+    <image src="../../images/media.svg"></image>
+    <view class="shape">
+      <text>媒体报道</text>
+    </view>
+  </view>
+</view>
+<view class="teachers" bindtap="toListImg" id="{{teachers_id}}">
+   <text>幼师风采</text>
+</view> 
+
+<view class="club">
+  <view class="mama" bindtap="toList" id="{{mamababa_id}}">
+    <image src="../../images/mama.svg" ></image>
+    <text>妈妈故事团</text>
+  </view>
+  <view class="dream">
+    <image src="../../images/dream.svg" bindtap="toList" id="{{dream_id}}"></image>
+    <text>七彩梦\n义工团</text>
+  </view>
+  <view class="baba">
+    <image src="../../images/baba.svg" bindtap="toList" id="{{mamababa_id}}"></image>
+    <text>爸爸进课堂</text>
+  </view>
+</view>
+<view class="footer">
+  <text>版权所有@北京市大兴区第七幼儿园</text>
 </view>
 </view>
