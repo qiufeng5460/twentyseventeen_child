@@ -330,6 +330,50 @@ function twentyseventeen_child_get_attachment_in_post($post_slug=''){
 }
 
 /**
+ * 20191017：从tag=slides_frontpage获取首页幻灯片的图片（标题和link）
+ * 因为在plug.slides2.2.js中使用了slides的li，所以在function中固定li的class为sildes
+ */
+ 
+function twentyseventeen_child_get_slides_post_tag($tag_slug=''){
+    
+    $image_slides='';
+
+    if(!$tag_slug){
+        return;
+    }
+    
+    $args=array('tag'=>'slides_frontpage');
+    
+    $query=new WP_Query($args);
+    
+    if($query->have_posts()){
+        while($query->have_posts()){
+            $query->the_post();
+            $img_id= get_post_thumbnail_id();
+            $img_url= wp_get_attachment_image_src($img_id,'full');
+            
+            $image_link=get_post_meta(get_the_id(),'wx_link',true);
+            $image_link=$image_link ? $image_link:get_permalink();
+            
+            $image_slides.='<li class="slides">'
+                    . '<a target="_blank" href="'.esc_url($image_link).'">'
+                    . '<div class="slides_img">'
+                    . '<img src="'.$img_url[0].'"/>'
+                    . '<div class="slides_title">'
+                    . '<p>'.get_the_title().'</p>'
+                    . '</div>'
+                    . '</div>'
+                    . '</a>'
+                    . '</li>'; 
+       
+        }
+    }
+    wp_reset_postdata();
+
+    echo $image_slides;
+}
+
+/**
  * 20190413：在frontpage添加分类列表
  */
  

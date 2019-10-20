@@ -30,12 +30,14 @@
 				'index':0,//默认显示的下标
 				'btnShow':true,//是否显示左右按钮
 				'btnIndexShow':true,//是否显示下标按钮
+                                'btnIndexSwitch':false,//是否下标切换图片
 				'autoScrool':true,//是否定时滚动
 				'speed':'3',//定时滚动时间间隔(单位：秒)
 				'height':'0'//高度(单位：像素)
 			},options);
 			return this.each(function(){
-				var divObj=$(this);
+				//divObj:a.fn.init(1)
+                                var divObj=$(this);
                                 
 				/*
 				var liWidthStr=divObj.css("width");
@@ -51,12 +53,14 @@
 					//liHight=liHight*bodyW/liWidth;
 					liWidth=bodyW;
 				}
-				
+				//set hight for ul
 				divObj.children("ul.slides").css({"height":liHight+"px"});
-
+                                //获取导航点图片的url
 				var slides_nav_a='<img src='+settings.nav_a+' style="border:0px;"/>';
 				var slides_nav_a_cur='<img src='+settings.nav_a_cur+' style="border:0px;"/>';
+                                //获取li数量
 				var liLength=divObj.children("ul.slides").children("li.slides").length;
+                                //根据li数量添加导航点
 				divObj.append('<div class="slides_nav"></div>');
 				for(var i=1;i<=liLength;i++){
 					if(i===1){
@@ -65,7 +69,10 @@
 						divObj.find("div.slides_nav").append("<a hidefocus='true'>"+slides_nav_a+"</a>");
 					}
 				}
+                                //复制同样数量的li添加到现有li之后
 				divObj.children("ul.slides").append(divObj.children("ul.slides").html());
+                                
+                                //设置前后切换箭头
 				if(settings.btnShow){
 					divObj.append('<a class="pre" title="pre" hidefocus="true"><i class="png"></i></a>');
 					divObj.append('<a class="next" title="next" hidefocus="true"><i class="png"></i></a>');
@@ -73,10 +80,12 @@
 				
 				divObj.css({"position":"relative","width":liWidth+"px","height":liHight+"px","overflow":"hidden","margin":"0px auto"});
 				//art.dialog.tips(liWidth);
-				
+				//设置ul宽度liLength*liWidth*2
 				divObj.children("ul.slides").css({"position":"absolute","left":"0px","width":liLength*liWidth*2+"px","height":liHight+"px","list-style-type":"none","margin":"0px","padding":"0px","overflow":"hidden"});
-				divObj.children("ul.slides").children("li.slides").css({"float":"left","width":liWidth+"px","height":liHight+"px","overflow":"hidden","text-align":"center"});
-				divObj.children("ul.slides").children("li.slides").children("a").css({"display":"block","overflow":"hidden","height":"100%","width":"100%"});
+				//设置li尺寸
+                                divObj.children("ul.slides").children("li.slides").css({"float":"left","width":liWidth+"px","height":liHight+"px","overflow":"hidden","text-align":"center"});
+				
+                                //divObj.children("ul.slides").children("li.slides").children("a").css({"display":"block","overflow":"hidden","height":"100%","width":"100%"});
 				//divObj.children("ul.slides").children("li.slides").children("img").css({"width":liWidth+"px"});
 				
 				//divObj.children("ul.slides").children("li.slides").css({"font-size":liHight/2+"px","line-height":liHight+"px"});//临时调试用的
@@ -153,6 +162,9 @@
 					if(!flag){
 						return;
 					}
+                                        if(settings.btnIndexSwitch===false){
+                                            return;
+                                        }
 					flag=false;
 					index=$(this).index();
 					divObj.find("div.slides_nav").children("a").eq(index).html(slides_nav_a_cur).siblings("a").html(slides_nav_a);

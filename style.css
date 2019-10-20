@@ -42,6 +42,13 @@ Version: 0.1.0
 /*--------------------------------------------------------------
 4.0 Clearings
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.0 Links
+--------------------------------------------------------------*/
+
+a:hover{
+   cursor:pointer;
+}
 
 /*--------------------------------------------------------------
 12.0 Navigation
@@ -508,11 +515,35 @@ breadcrumbs
         height:300px;
         overflow: hidden;
         display:block;
+        box-shadow: 2px 2px 8px -1px #3498DB;
     }
     .the1row .slides_frontpage img{
         height:100%;
         width:auto;
     }
+    
+    /*20191019:幻灯片加文字和link*/
+    .slides_img{
+        position:relative;
+    }
+
+    .slides_title{
+        position:absolute;
+        z-index:1;
+        top:0;
+        width:100%;
+        height:36px;
+        background: rgba(52,152,219,.5);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .slides_title p{
+        color:white;
+        margin:0;
+    }
+    
+
     .the2row .childhood_frontpage{
         float:left;
         width:50%;

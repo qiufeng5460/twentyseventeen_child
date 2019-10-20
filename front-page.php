@@ -53,7 +53,10 @@ get_header(); ?>
     <div id="advertisement" class="slides" style="width:540px;height:300px;">
         
         <ul class="slides" style="overflow:hidden;">
-        <?php twentyseventeen_child_get_attachment_in_post('slides_frontpage');?>  
+        <?php 
+            //twentyseventeen_child_get_attachment_in_post('slides_frontpage');
+            twentyseventeen_child_get_slides_post_tag('slides_frontpage');
+        ?>  
         </ul>   
     </div>
 </div>    
